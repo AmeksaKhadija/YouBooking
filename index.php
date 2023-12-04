@@ -49,9 +49,9 @@
             <div class="d-flex border-bottom justify-content-between align-items-center px-2">
             <i class="fa-solid fa-gear pb-3" style="color: #ffffff;"></i>
             <p class="text-light fw-bold pb-3 mt-2">Settings</p>
-            </div> </div>
+            </div> 
+        </div>
             <div>
-                
             </div>
     </section>
     <section class="dashboard w-75 bg-danger">
