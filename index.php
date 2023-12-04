@@ -46,6 +46,7 @@
             <i class="fa-regular fa-comment-dots pb-3" style="color: #ffffff;"></i>
             <p class="text-light fw-bold pb-3 mt-2">Messages</p>
             </div>
+            
             <div class="d-flex border-bottom justify-content-between align-items-center px-2">
             <i class="fa-solid fa-gear pb-3" style="color: #ffffff;"></i>
             <p class="text-light fw-bold pb-3 mt-2">Settings</p>
