@@ -1,6 +1,6 @@
 <?php
     require '../config/server.php';
-    $sql = "SELECT * FROM `users` WHERE request_id = 2";
+    $sql = "SELECT * FROM users WHERE request_id = 2";
     $result = mysqli_query($con,$sql);
     if(!$result)
     {
