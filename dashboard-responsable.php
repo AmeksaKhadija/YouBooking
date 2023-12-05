@@ -56,6 +56,28 @@
         <div class="oudashboard_reservation w-10  ms-4 mt-4">
             <a class="navbar-brand fw-bold text-light fs-4 ms-3 mt-2" href="#"><span class="navbar-logo">You</span>booking</a>
             <p class="text-light fw-bold ms-5">Welcome Back Salima!</p>
+            <table class="table bg-dark-subtle">
+                <?php
+                    
+
+                ?>
+                <thead class="table ">
+                    <tr class="table">
+                    <th scope="col">Id of reservation</th>
+                    <th scope="col">Name of client</th>
+                    <th scope="col">Check in</th>
+                    <th scope="col">Check out</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table">
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    </tr>
+                </tbody>
+            </table>
 
         </div>
         <div class="ourdashboard--statistics ms-4 mb-5 d-flex mt-3 h-50">
@@ -97,5 +119,8 @@
     }
     .ourdashboard--statistics_graph{
         background-color:rgba(67, 81, 117, 1);
+    }
+    .table{
+        background-color:rgba(67, 81, 117, 1);  
     }
 </style>
