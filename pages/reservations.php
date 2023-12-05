@@ -69,6 +69,10 @@
                         <i class="fa-solid fa-gear pb-3" style="color: #ffffff;"></i>
                         <a href="" class="text-light fw-bold pb-3 mt-2">Settings</a>
                     </div>
+                    <div class="d-flex justify-content-between align-items-center border-bottom px-2">
+                        <i class="fa-solid fa-hotel pb-3" style="color: #ffffff;"></i>
+                        <a href="" class="text-light fw-bold pb-3 mt-2 ">Added hotel</a>
+                    </div>
                 </div>
                 <div>
                 </div>
