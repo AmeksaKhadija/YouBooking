@@ -5,9 +5,9 @@
     if(isset($_GET["id"]))
     {
         $id =  $_GET['id'];
-        $sql = "DELETE  FROM hotels WHERE ID = $id";
+        $sql = "DELETE  FROM hotel WHERE hotel_id = $id";
         mysqli_query($con,$sql);
-        header("location: ../index.php");
+        header("location: dashboard.php");
     }
     else
     {
