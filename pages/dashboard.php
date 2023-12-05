@@ -68,12 +68,8 @@
                     </div>
 
                     <div class="d-flex border-bottom justify-content-between align-items-center px-2">
-                        <i class="fa-solid fa-table-cells pb-3" style="color: #ffffff;"></i>
-                        <a href="reservations.php" class=" text-light fw-bold pb-3 mt-2">Open reservations</a>
-                    </div>
-                    <div class="d-flex border-bottom justify-content-between align-items-center px-2">
                         <i class="fa-solid fa-chart-line pb-3" style="color: #ffffff;"></i>
-                        <a href="" class=" text-light fw-bold pb-3 mt-2">Booking Stats</a>
+                        <a href="requests.php" class=" text-light fw-bold pb-3 mt-2">Requests</a>
                     </div>
                     <div class="d-flex border-bottom justify-content-between align-items-center px-2">
                         <i class="fa-solid fa-chart-pie pb-3" style="color: #ffffff;"></i>
@@ -124,7 +120,6 @@
             </table>
         </div>
       </div>
-
       <?php
         include "footer.php";
         ?>
