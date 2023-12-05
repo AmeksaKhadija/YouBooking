@@ -1,0 +1,77 @@
+.card {
+  margin-left: 40%;
+  margin-top: 10%;
+}
+
+.card-title {
+  color: #692525; 
+  margin-right: 50%;
+}
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
+
+.containers {
+    margin-top: 20%;
+}
+.text-center {
+    margin-top: 5%;
+}
+
+
+/* form sign up */
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+body{
+  background: #fff;
+  font-family: 'PT Sans', sans-serif;
+}
+h2{
+  padding-top: 1.5rem;
+}
+a{
+  color: #333;
+}
+a:hover{
+  color: #CEA0AA;
+  text-decoration: none;
+}
+
+.form-control{
+  background-color: #f8f9fa;
+  padding: 20px;
+  margin-bottom: 1.2rem;
+  border-radius: 1.5rem;
+}
+
+.form-control:focus {
+
+    color: #000000;
+    background-color: #ffffff;
+    border: 3px solid #CEA0AA;
+    outline: 0;
+    box-shadow: none;
+
+}
+
+.btn{
+  padding: 0.6rem 1.2rem;
+  background: #D6E8EE;
+  border: 2px solid #8D8480;
+  border-radius: 1rem;
+  margin-left: 3.8%;
+}
+
