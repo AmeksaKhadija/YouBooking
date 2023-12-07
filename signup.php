@@ -18,8 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     {
       $sql = "INSERT INTO users (name, pass_word, email, phone_number) VALUES ('$name', '$password', '$email' , '$phone')";
       $result = mysqli_query($con,$sql);
-
       if ($result){
+
           echo "Inscription réussie !";
       } else {
           echo "Erreur : " . $sql . "<br>";
@@ -123,5 +123,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
   </div>
 </div>
+<script src="/pages/js/script.js"></script>
 </body>
 </html>
