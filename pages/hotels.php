@@ -84,7 +84,7 @@
                     </div>
                     <div class="d-flex justify-content-between align-items-center border-bottom px-2">
                         <i class="fa-solid fa-hotel pb-3" style="color: #ffffff;"></i>
-                        <a href="" class="text-light fw-bold pb-3 mt-2 ">Added hotel</a>
+                        <a href="hotels.php" class="text-light fw-bold pb-3 mt-2 ">Added hotel</a>
                     </div>
                 </div>
             <div>
@@ -103,32 +103,32 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                            <form>
+                            <form method="post" action="hotelsadd.php">
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Name</label>
-                                    <input type="text" class="form-control" id="name">
+                                    <input type="text" class="form-control" id="name" name="name">
                                 </div>
                                 <div class="mb-3">
                                     <label for="location" class="form-label">Location</label>
-                                    <input type="text" class="form-control" id="location">
+                                    <input type="text" class="form-control" id="location" name="location">
                                 </div>
                                 <div class="mb-3">
                                     <label for="phoneNumber" class="form-label">Phone Number</label>
-                                    <input type="tel" class="form-control" id="phoneNumber">
+                                    <input type="tel" class="form-control" id="phoneNumber" name="contact_number">
                                 </div>
                                 <div class="mb-3">
                                     <label for="amenities1" class="form-label">Amenities </label>
-                                    <input type="text" class="form-control" id="amenities1">
+                                    <input type="text" class="form-control" id="amenities1" name="amenities">
                                 </div>
                                 <div class="mb-3">
                                     <label for="amenities2" class="form-label">Description</label>
-                                    <input type="text" class="form-control" id="amenities2">
+                                    <input type="text" class="form-control" id="amenities2" name="description">
                                 </div>
                                 <div class="mb-3 form-check">
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                     <label class="form-check-label" for="exampleCheck1">Make sure you have added a Hotel</label>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
                             </form>
                             </div>
                         </div>
@@ -148,16 +148,49 @@
                        </tr>
                     </thead>
                     <tbody>
+                          <?php
+                        include('../config/server.php'); 
+                        $sqlSELECT="SELECT * FROM hotel";
+                        $result = mysqli_query($con, $sqlSELECT);
+                        // requette execute
+                  			while ($data = mysqli_fetch_array($result)) {
+                        // fonction entre à la base de donnée et faire un parcourer dans la base de donnée et faire l'affichage
+                  			?>
+                  				<tr>
+                  					<td>
+                  						<?php echo $data['name']; ?>
+                  					</td>
+                  					<td>
+                  						<?php echo $data['location']; ?>
+                  					</td>
+                  					<td>
+                  						<?php echo $data['contact_number']; ?>
+                  					</td>
+                                    <td>
+                  						<?php echo $data['amenities']; ?>
+                  					</td>
+                                     <td>
+                  						<?php echo $data['description']; ?>
+                  					</td>
+                                    <td>
+                                    <a href="delethotel.php?id=<?php echo $data['hotel_id'];?>"><i class="fa-solid fa-trash"></i></a>
+                                    <a href="edithotel.php?id=<?php echo $data['hotel_id'];?>"><i class="fa-regular fa-pen-to-square"></i></a>
+                                    <a href="inforoom.php?id=<?php echo $data['hotel_id'];?>"><i class="fa-solid fa-eye"></i></a>
+                                    </td>
+                                </tr>
+                                <?php 
+                                }
+                                 mysqli_close($con);
+                                ?>
                     </tbody>
-
-                </table>  
-
+                </table> 
+                
             </div> 
     </div>
        
       <?php
         include "footer.php";
       ?>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
