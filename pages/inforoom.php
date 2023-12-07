@@ -1,50 +1,18 @@
- 
-
-<!-- hhhhhhhhh -->
 <?php
+  include('../config/server.php'); 
 
-if (isset($_GET['id'])) {
-    include('../config/server.php');
-
-    $id = $_GET['id'];
-    $sql = "SELECT * FROM hotel WHERE hotel_id=$id";
-    $result = mysqli_query($con, $sql);
-    $row = mysqli_fetch_array($result);
-
-}
-
-if(isset($_POST['submit'])){
-    $nom = $_POST['name'];
-    $location = $_POST['location'];
-    $contact_number = $_POST['contact_number'];
-    $amenities = $_POST['amenities'];
-    $description = $_POST['description'];
-    $id = $_GET['id'];
-
-    $sql = "UPDATE hotel SET `name` = '$nom',`location` = '$location',`contact_number` = '$contact_number',`amenities` = '$amenities',`description` = '$description' WHERE `hotel_id` = $id";
-
-    $result = mysqli_query($con, $sql);
-
-    if ($result) {
-        header("Location: hotels.php");
-        exit();
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($con);
-    }
-}
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouBooking</title>
+    <title>reservations</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 </head>
 <body>
     <style>
@@ -86,6 +54,10 @@ if(isset($_POST['submit'])){
       transition: .3s;
     }
   </style>
+
+        <?php
+        include 'header.php';
+        ?>
     <div class="d-flex h-100">
         <section class="sidebar  mt-0">
             <br>
@@ -119,56 +91,34 @@ if(isset($_POST['submit'])){
                     </div>
                     <div class="d-flex justify-content-between align-items-center border-bottom px-2">
                         <i class="fa-solid fa-hotel pb-3" style="color: #ffffff;"></i>
-                        <a href="" class="text-light fw-bold pb-3 mt-2 ">Added hotel</a>
+                        <a href="hotels.php" class="text-light fw-bold pb-3 mt-2 ">Added hotel</a>
                     </div>
                 </div>
             <div>
         </section>
             <div class="table my-5">
-                 <h3>bienvenu à YouBooking </h3>
-                <!-- Modal -->
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">Create Account</h5>
-                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                            <form method="post" action="">
-                                <div class="mb-3">
-                                    <label for="name" class="form-label">Name</label>
-                                    <input type="text" class="form-control" id="name" name="name" value="<?php echo $row['name'] ?>">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="location" class="form-label">Location</label>
-                                    <input type="text" class="form-control" id="location" name="location"  value="<?php echo $row['location'] ?>">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="phoneNumber" class="form-label">Phone Number</label>
-                                    <input type="tel" class="form-control" id="phoneNumber" name="contact_number" value="<?php echo $row['contact_number'] ?>">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="amenities1" class="form-label">Amenities </label>
-                                    <input type="text" class="form-control" id="amenities1" name="amenities" value="<?php echo $row['amenities'] ?>">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="amenities2" class="form-label">Description</label>
-                                    <input type="text" class="form-control" id="amenities2" name="description" value="<?php echo $row['description'] ?>">
-                                </div>
-                                <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Make sure you have added a Hotel</label>
-                                </div>
-                                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
-                            </form>
-                            </div>
-                        </div>
-                    </div>
+                <h1>Hotel Room Description</h1>
+                <div class="row">
+                  <div class="col-md-6">
+                    <img src="https://th.bing.com/th/id/R.25b86c23a77f0e94d5e909cc1b3bceff?rik=Djcc7WwfZAnIjA&riu=http%3a%2f%2fcache.marriott.com%2fmarriottassets%2fmarriott%2fSTFCT%2fstfct-guestroom-0045-hor-clsc.jpg%3finterpolation%3dprogressive-bilinear%26&ehk=Qfi1Qy2RPsgQGGJQ%2bDLh1pnflcQlURsqEc584MAYrZI%3d&risl=&pid=ImgRaw&r=0" alt="Room Image" class="img-fluid">
+                  </div>
+                  <div class="col-md-6">
+                    <h2>Room Name</h2>
+                    <p>Room Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut dui eget mauris dapibus porta.</p>
+                    <ul class="list-group">
+                      <li class="list-group-item"><strong>Price:</strong> $200</li>
+                      <li class="list-group-item"><strong>quantity:</strong> 50 </li>
+                      <li class="list-group-item"><strong>Amenities:</strong> Free Wi-Fi, Air Conditioning, Mini Fridge</li>
+                    </ul>
+                  </div>
+                </div>
             </div>
-    </div>
-
+     </div> 
+</div>
+       
+      <?php
+        include "footer.php";
+      ?>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
-</html>    
+</html>             
