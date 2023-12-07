@@ -1,19 +1,20 @@
-<footer class=" d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    <div class="col-md-4 d-flex align-items-center">
-      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-      </a>
-      <span class="mb-3 mb-md-0 text-muted">© 2023 was made by salima</span>
-    </div>
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <p class="col-md-4 mb-0 text-light">© 2023 Youbooking, made by yousalima,youkhadija,youossama and youbanta Inc</p>
 
-    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-      <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+    <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+    </a>
+
+    <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-light fw-bold">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-light fw-bold">Features</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-light fw-bold">Pricing</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-light fw-bold">FAQs</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-light fw-bold">About</a></li>
     </ul>
   </footer>
-<style>
-  .footer{
-    background-color: rgba(27, 51, 88, 1);
-  }
-</style>
+  <style>
+    footer{
+      background-color:rgba(67, 81, 117, 1);;
+    }
+  </style>
