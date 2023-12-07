@@ -23,39 +23,39 @@
             <div class="sidebar_phases border-bottom h-75 ms-3  pb-5">
                     <div class="d-flex justify-content-between align-items-center border-bottom px-2">
                         <i class="fa-solid fa-hotel pb-3" style="color: #ffffff;"></i>
-                        <p class="text-light fw-bold pb-3 mt-2">information about hotel</p>
+                        <a href="pages/hotels.php" class="text-light fw-bold pb-3 mt-2 text-decoration-none">information about hotel</a>
                     </div>
 
                     <div class="d-flex border-bottom justify-content-between align-items-center px-2">
                         <i class="fa-solid fa-bookmark pb-3" style="color: #ffffff;"></i>
-                        <p class=" text-light fw-bold pb-3 mt-2">Your Saving </p>
+                        <a href="" class="text-light fw-bold pb-3 mt-2 text-decoration-none">Your Saving </a>
                     </div>
                     <div class="d-flex border-bottom justify-content-between align-items-center px-2">
                         <i class="fa-solid fa-table-cells pb-3" style="color: #ffffff;"></i>
-                        <p class=" text-light fw-bold pb-3 mt-2">Open reservations</p>
+                        <a href="pages/reservations" class="text-light fw-bold pb-3 mt-2 text-decoration-none">Open reservations</a>
                     </div>
                     <div class="d-flex border-bottom justify-content-between align-items-center px-2">
                         <i class="fa-solid fa-chart-line pb-3" style="color: #ffffff;"></i> 
-                        <p class=" text-light fw-bold pb-3 mt-2">Booking Stats</p>
+                        <a href="" class="text-light fw-bold pb-3 mt-2 text-decoration-none">Booking Stats</a>
                     </div>
                     <div class="d-flex border-bottom justify-content-between align-items-center px-2">
                         <i class="fa-solid fa-chart-pie pb-3" style="color: #ffffff;"></i>
-                        <p class="text-light fw-bold pb-3 mt-2">Booking Traffic</p>
+                        <a href="" class="text-light fw-bold pb-3 mt-2 text-decoration-none">Booking Traffic</a>
                     </div>
                     <div class="d-flex border-bottom justify-content-between align-items-center px-2">
                         <i class="fa-regular fa-comment-dots pb-3" style="color: #ffffff;"></i>
-                        <p class="text-light fw-bold pb-3 mt-2">Messages</p>
+                        <a href="pages/messageclient.php" class="text-light fw-bold pb-3 mt-2 text-decoration-none">Messages</a>
                     </div>
                     <div class="d-flex border-bottom justify-content-between align-items-center px-2">
                         <i class="fa-solid fa-gear pb-3" style="color: #ffffff;"></i>
-                        <p class="text-light fw-bold pb-3 mt-2">Settings</p>
+                        <a href="" class="text-light fw-bold pb-3 mt-2 text-decoration-none">Settings</a>
                     </div>
             </div>
         </div>
         <div>
         <div class="oudashboard_reservation w-10  ms-4 mt-4">
             <a class="navbar-brand fw-bold text-light fs-4 ms-3 mt-2" href="#"><span class="navbar-logo">You</span>booking</a>
-            <p class="text-light fw-bold ms-5">Welcome Back Salima!</p>
+            <p class="text-light fw-bold ms-5">Welcome Back!</p>
             <table class="table bg-dark-subtle">
                 <thead class="table ">
                     <tr class="table">
