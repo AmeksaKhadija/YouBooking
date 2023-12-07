@@ -32,7 +32,7 @@
                     </div>
                     <div class="d-flex border-bottom justify-content-between align-items-center px-2">
                         <i class="fa-solid fa-table-cells pb-3" style="color: #ffffff;"></i>
-                        <a href="" class="text-light fw-bold pb-3 mt-2 text-decoration-none">Open reservations</a>
+                        <a href="pages/reservations" class="text-light fw-bold pb-3 mt-2 text-decoration-none">Open reservations</a>
                     </div>
                     <div class="d-flex border-bottom justify-content-between align-items-center px-2">
                         <i class="fa-solid fa-chart-line pb-3" style="color: #ffffff;"></i> 
