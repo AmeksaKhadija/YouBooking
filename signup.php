@@ -7,6 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $phone = $_POST['number'];
+    $_SESSION['name'] = $name;
 
     $sql = "INSERT INTO users (name, pass_word, email, phone_number) VALUES ('$name', '$password', '$email' , '$phone')";
     $result = mysqli_query($con,$sql);
