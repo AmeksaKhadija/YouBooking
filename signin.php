@@ -17,7 +17,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
         if (password_verify($password, $hashedPassword)) {
           $_SESSION['email'] = $email;
-            header('location:home1.php');
+            header('location: pages/dashboard.php');
             
         } else {
             echo "Incorrect password";
@@ -51,26 +51,65 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+  .holder
+  {
+    width: 50%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
   }
+
+.container_holder
+{
+  width: 100%;
+  height: 100%;
+}
+
+.card{
+  margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    padding: 0 11rem;
+}
+
+.form-control {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin-bottom: 1.2rem;
+    border-radius: 1.5rem;
+    width: 17vw;
+}
 </style>
 <body >
 
-<div class="container">
-  <div class="row justify-content-center">
+<div class="container holder">
+  <div class="row justify-content-center container_holder">
       <div class="col-md-5">
-       <div class="card">
-            <h2 class="card-title text-center">Bienvenue chez nous !</h2>
+       <div class="card m-0">
+            <h1 class="card-title fs-2 text-black">Bienvenue chez nous !</h1>
          <div class="card-body py-md-4">
-         <form method="post">
+         <form  method="post">
             <div class="form-group">
               <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
             </div>
             <div class="form-group">
               <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
             </div>
-           
+            <div class="d-flex check">
+              <p for="checkbox" class="me-5">Don't have an account<a href="signup.php">Sign Up</a></p>
+            </div>
             <div class="d-flex flex-row align-items-center"><br>
-              <button type="submit" class="btn btn-primary">sign in </button>
+              <button type="submit" class="btn btn-primary">Sign Up</button>
             </div>
           </form>
          </div>
