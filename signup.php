@@ -7,6 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $phone = $_POST['number'];
+    $_SESSION['name'] = $name;
 
     if(isset($_POST['checkbox']))
     {
