@@ -28,7 +28,7 @@
 
                     <div class="d-flex border-bottom justify-content-between align-items-center px-2">
                         <i class="fa-solid fa-bookmark pb-3" style="color: #ffffff;"></i>
-                        <a href="" class="text-light fw-bold pb-3 mt-2 text-decoration-none">Your Saving </a>
+                        <a href="#" class="text-light fw-bold pb-3 mt-2 text-decoration-none">Your Saving </a>
                     </div>
                     <div class="d-flex border-bottom justify-content-between align-items-center px-2">
                         <i class="fa-solid fa-table-cells pb-3" style="color: #ffffff;"></i>
@@ -36,11 +36,11 @@
                     </div>
                     <div class="d-flex border-bottom justify-content-between align-items-center px-2">
                         <i class="fa-solid fa-chart-line pb-3" style="color: #ffffff;"></i> 
-                        <a href="" class="text-light fw-bold pb-3 mt-2 text-decoration-none">Booking Stats</a>
+                        <a href="#" class="text-light fw-bold pb-3 mt-2 text-decoration-none">Booking Stats</a>
                     </div>
                     <div class="d-flex border-bottom justify-content-between align-items-center px-2">
                         <i class="fa-solid fa-chart-pie pb-3" style="color: #ffffff;"></i>
-                        <a href="" class="text-light fw-bold pb-3 mt-2 text-decoration-none">Booking Traffic</a>
+                        <a href="#" class="text-light fw-bold pb-3 mt-2 text-decoration-none">Booking Traffic</a>
                     </div>
                     <div class="d-flex border-bottom justify-content-between align-items-center px-2">
                         <i class="fa-regular fa-comment-dots pb-3" style="color: #ffffff;"></i>
@@ -48,7 +48,7 @@
                     </div>
                     <div class="d-flex border-bottom justify-content-between align-items-center px-2">
                         <i class="fa-solid fa-gear pb-3" style="color: #ffffff;"></i>
-                        <a href="" class="text-light fw-bold pb-3 mt-2 text-decoration-none">Settings</a>
+                        <a href="#" class="text-light fw-bold pb-3 mt-2 text-decoration-none">Settings</a>
                     </div>
             </div>
         </div>
