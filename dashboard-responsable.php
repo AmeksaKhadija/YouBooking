@@ -57,34 +57,42 @@
             <a class="navbar-brand fw-bold text-light fs-4 ms-3 mt-2" href="#"><span class="navbar-logo">You</span>booking</a>
             <p class="text-light fw-bold ms-5">Welcome Back Salima!</p>
             <table class="table bg-dark-subtle">
-                <?php
-                    
-
-                ?>
                 <thead class="table ">
                     <tr class="table">
-                    <th scope="col">Id of reservation</th>
+                    <th scope="col">reference of reservation</th>
                     <th scope="col">Name of client</th>
                     <th scope="col">Check in</th>
                     <th scope="col">Check out</th>
                     </tr>
                 </thead>
+                <?php
+                    include "config/connect.php";
+                    $requete= "SELECT DISTINCT reservation.reservation_id, users.name, reservation.start_date, reservation.end_date
+                    FROM reservation
+                    INNER JOIN users ON reservation.user_id = users.user_id";
+                    $query = mysqli_query($connect,$requete);
+                    while($data = mysqli_fetch_assoc($query)) {?>
                 <tbody>
                     <tr class="table">
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <th scope="row"><?php echo $data['reservation_id'] ?> </th>
+                    <td><?php echo $data['name']; ?> </td>
+                    <td><?php echo $data['start_date']; ?></td>
+                    <td><?php echo $data['end_date']; ?></td>
+                    
                     </tr>
                 </tbody>
+                <?php }?>
             </table>
 
         </div>
         <div class="ourdashboard--statistics ms-4 mb-5 d-flex mt-3 h-50">
-            <div class="ourdashboard--statistics_graph w-50 me-4 text-light fw-bold mb-5"><p class="ms-3 mt-3">Booking Stats</p></div>
+            <div class="ourdashboard--statistics_graph w-50 me-4 text-light fw-bold mb-5">
+                <p class="ms-3 mt-3">Booking Stats</p>
+                <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+            
+            </div>
             <div class="ourdashboard--statistics_graph  w-50 text-light fw-bold mb-5"><p class="ms-3 mt-3">Booking traffic</p></div>
         </div>
-
 
 
         </div>
@@ -94,9 +102,13 @@
 <?php 
     include "pages/footer.php"
 ?>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-</body>
-</html>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+        </script>
+        <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+        </script>
+        </body>
+        </html>
 <style>
     .sidebar{
         width:20%;
