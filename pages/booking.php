@@ -33,17 +33,17 @@
 					</div>
 					<div class="col-md-6 col-md-offset-1">
 						<div class="booking-form">
-							<form>
+							<form action="php/scripts.php" method="POST"> 
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
-											<input class="form-control" type="text">
+											<input class="form-control" type="text" name="full)name">
 											<span class="form-label">Name</span>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<input class="form-control" type="email">
+											<input class="form-control" type="email" name="email">
 											<span class="form-label">Email</span>
 										</div>
 									</div>
@@ -51,7 +51,7 @@
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
-											<input class="form-control" type="tel">
+											<input class="form-control" type="tel" name="phone_number">
 											<span class="form-label">Phone</span>
 										</div>
 									</div>
@@ -81,19 +81,19 @@
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
-											<input class="form-control" type="date" required>
+											<input class="form-control" type="date" name="checkin" required>
 											<span class="form-label">Check In</span>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
-											<input class="form-control" type="date" required>
+											<input class="form-control" type="date" name="checkout" required>
 											<span class="form-label">Check Out</span>
 										</div>
 									</div>
 								</div>
 								<div class="form-btn">
-									<button class="submit-btn">Book Now</button>
+									<button name="book" class="submit-btn">Book Now</button>
 								</div>
 							</form>
 						</div>
