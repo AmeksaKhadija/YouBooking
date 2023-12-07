@@ -1,64 +1,88 @@
-CREATE TABLE role(
-	id_role INT PRIMARY KEY AUTO_INCREMENT,
-    role_type varchar(225)
+CREATE DATABASE IF not EXISTS youbooking;
+
+
+
+
+use youbooking ;
+
+
+CREATE TABLE localisation(
+   location_id INT PRIMARY KEY AUTO_INCREMENT,
+   pays varchar(255),
+    ville varchar(255)
+)ENGINE=INNODB;
+
+
+
+
+
+
+CREATE TABLE hotel (
+    hotel_id INT PRIMARY KEY AUTO_INCREMENT,
+   location_id INT,
+    name VARCHAR(255) NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    contact_number VARCHAR(20),
+    amenities TEXT,
+    FOREIGN KEY (location_id) REFERENCES localisation(location_id) ON DELETE CASCADE
+)ENGINE=INNODB;
+
+CREATE TABLE typeroom (
+    roomtype_id INT PRIMARY KEY AUTO_INCREMENT,
+    room_type VARCHAR(50) NOT NULL
 );
+CREATE TABLE room (
+    room_id INT PRIMARY KEY AUTO_INCREMENT,
+    hotel_id INT,
+    roomtype_id int,
+    price DECIMAL(10, 2) NOT NULL,
+    quantity INT NOT NULL,
+    amenities TEXT,
+    FOREIGN KEY (roomtype_id) REFERENCES typeroom(roomtype_id) ON DELETE CASCADE,
+    FOREIGN KEY (hotel_id) REFERENCES hotel(hotel_id) ON DELETE CASCADE
+)ENGINE=INNODB;
+
+
+CREATE TABLE roles(
+  role_id int PRIMARY key AUTO_INCREMENT,
+  role_type varchar(255)
+)ENGINE=INNODB;
 
 CREATE TABLE request(
-	id_request INT PRIMARY KEY AUTO_INCREMENT,
-    request varchar(224)
-);
+  request_id int PRIMARY key AUTO_INCREMENT,
+  request varchar(255) DEFAULT 'not send'
+)ENGINE=INNODB;
 
-CREATE TABLE userTable(
-	id_user INT PRIMARY KEY AUTO_INCREMENT,
-    name varchar(224),
-    email varchar(224),
-    password varchar(224),
-    phone INT,
-    id_role INT,
-    id_request INT,
-    FOREIGN KEY (id_role) REFERENCES role (id_role),
-    FOREIGN KEY (id_request) REFERENCES request (id_request)
-);
+CREATE TABLE users (
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
+    role_id INT ,
+    request_id int , 
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    pass_word VARCHAR(100) NOT NULL,
+    phone_number VARCHAR(20),
+    FOREIGN KEY (request_id) REFERENCES request(request_id) ON DELETE CASCADE,
+    FOREIGN KEY (role_id) REFERENCES roles(role_id) ON DELETE CASCADE
+)ENGINE=INNODB;
 
-CREATE TABLE location(
-	id_location INT PRIMARY KEY AUTO_INCREMENT,
-    address varchar(224)
-);
 
-CREATE TABLE hotel(
-	id_hotel INT PRIMARY KEY AUTO_INCREMENT,
-    name varchar(224),
-    stars INT,
-    number INT,
-    descriptio TEXT,
-	id_location INT,
-    FOREIGN KEY (id_location) REFERENCES location (id_location)
-);
+CREATE TABLE reservation (
+    reservation_id INT PRIMARY KEY AUTO_INCREMENT,
+    room_id INT,
+    user_id INT,
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    total_cost DECIMAL(10, 2) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (room_id) REFERENCES room(room_id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+)ENGINE=INNODB;
 
-CREATE TABLE room_type(
-	troom_id INT PRIMARY KEY AUTO_INCREMENT,
-    type varchar(224)
-);
-
-CREATE TABLE room(
-	id_room INT PRIMARY KEY AUTO_INCREMENT,
-    room_type varchar(224),
-    price INT,
-    quantity INT,
-	id_hotel INT,
-	troom_id INT,
-    FOREIGN KEY (id_hotel) REFERENCES hotel (id_hotel),
-    FOREIGN KEY (troom_id) REFERENCES room_type (troom_id)
-);
-
-CREATE TABLE reservation(
-	id_reservation INT PRIMARY KEY AUTO_INCREMENT,
-    date_start DATE,
-    date_end DATE,
-    price float,
-	id_hotel INT,
-	troom_id INT,
-    FOREIGN KEY (id_hotel) REFERENCES hotel (id_hotel),
-    FOREIGN KEY (troom_id) REFERENCES room_type (troom_id)
-);
-
+CREATE TABLE invoice (
+    invoice_id INT PRIMARY KEY AUTO_INCREMENT,
+    reservation_id INT,
+    issue_date DATE NOT NULL,
+    amount_due DECIMAL(10, 2) NOT NULL,
+    status VARCHAR(20) DEFAULT 'Unpaid',
+    FOREIGN KEY (reservation_id) REFERENCES reservation(reservation_id) ON DELETE CASCADE
+)ENGINE=INNODB;
