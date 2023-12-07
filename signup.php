@@ -11,8 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(isset($_POST['checkbox']))
     {
 
-      $sql_box ="INSERT INTO users (request_id ,name, pass_word, email, phone_number) VALUES (2,'$name', '$password', '$email' , '$phone')";
+      $sql_box ="INSERT INTO users (name, pass_word, email, phone_number) VALUES ('$name', '$password', '$email' , '$phone')";
       mysqli_query($con,$sql_box);
+      header("location: signin.php");
     }else
     {
       $sql = "INSERT INTO users (name, pass_word, email, phone_number) VALUES ('$name', '$password', '$email' , '$phone')";
@@ -23,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       } else {
           echo "Erreur : " . $sql . "<br>";
       }
-      header('location:home1.php');
+      header('location:signin.php');
     }
   }
 ?>
