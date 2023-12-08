@@ -113,10 +113,8 @@
         <div class="table my-5">
             <table>
                 <thead>
-                    <th>user</th>
-                    <th>user email</th>
                     <th>hotel name</th>
-                    <th>hotel name</th>
+                    <th>city</th>
                     <th>start date</th>
                     <th>end date</th>
                     <th>More</th>
@@ -127,15 +125,13 @@
                         {
                            echo "
                              <tr>
-                                <td>$row[user]</td>
-                                <td>$row[user_email]</td>
                                 <td>$row[hotel_name]</td>
                                 <td>$row[hotel_address]</td>
                                 <td>$row[start_date]</td>
                                 <td>$row[end_date]</td>
                                 <td>
                                     <a href='#'><i class='fa-solid fa-circle-info'></i></a>
-                                    <a href='delete.php' class='delete'><i class='fa-solid fa-trash-can'></i></a>
+                                    <a href='delete_reservation.php?id=$row[id]' class='delete'><i class='fa-solid fa-trash-can'></i></a>
                                 </td>
                             </tr>
                            ";

@@ -9,7 +9,6 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
     $query = "SELECT * FROM users WHERE email = '$email'";
     $result = mysqli_query($con, $query);
-   
 
     if ( mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
