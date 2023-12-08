@@ -2,19 +2,19 @@
   include "header.php";
   include "../config/server.php";
 
-  $requeta="SELECT EXTRACT(MONTH FROM `start_date`),
+  $requeta="SELECT MONTH(reservation.start_date),
   CASE
-           WHEN 1 THEN 'Janvier'
-           WHEN 2 THEN 'Février'
-           WHEN 3 THEN 'Mars'
-           WHEN 4 THEN 'Avril'
-           WHEN 5 THEN 'Mai'
-           WHEN 6 THEN 'Juin'
-           WHEN 7 THEN 'Juillet'
-           WHEN 8 THEN 'Août'
-           WHEN 9 THEN 'Septembre'
-           WHEN 10 THEN 'Octobre'
-           WHEN 11 THEN 'November'
+           WHEN MONTH(reservation.start_date)= 1 THEN 'Janvier'
+           WHEN MONTH(reservation.start_date)= 2 THEN 'Février'
+           WHEN MONTH(reservation.start_date)= 3 THEN 'Mars'
+           WHEN MONTH(reservation.start_date)= 4 THEN 'Avril'
+           WHEN MONTH(reservation.start_date)= 5 THEN 'Mai'
+           WHEN MONTH(reservation.start_date)= 6 THEN 'Juin'
+           WHEN MONTH(reservation.start_date)= 7 THEN 'Juillet'
+           WHEN MONTH(reservation.start_date)= 8 THEN 'Août'
+           WHEN MONTH(reservation.start_date)= 9 THEN 'Septembre'
+           WHEN MONTH(reservation.start_date)= 10 THEN 'Octobre'
+           WHEN MONTH(reservation.start_date)= 11 THEN 'November'
            ELSE 'December'
   END
   FROM `reservation` GROUP BY EXTRACT(MONTH FROM `start_date`);";
@@ -22,7 +22,7 @@
   if(!$querya){
     echo "makhdaaaamsh";
   }
-  $data=mysqli_fetch_assoc($querya)
+  $data=mysqli_fetch_assoc($querya);
 
 
 ?>
@@ -50,7 +50,7 @@
               new Chart(ctx, {
                 type: 'bar',
                 data: {
-                  labels: ['August ', 'September ', 'October', 'November'],
+                  labels: ['August', 'September ', 'October', 'November'],
                   datasets: [{
                     label: ' les tendances de réservation ',
                     data: [12, 19, 3, 5, 2, 3],

@@ -62,7 +62,7 @@
                     <th scope="col">reference of reservation</th>
                     <th scope="col">Name of client</th>
                     <th scope="col">Check in</th>
-                    <th scope="col">Check out</th>
+                    <th scope="col">Check out </th>
                     </tr>
                 </thead>
                 <?php
