@@ -46,7 +46,7 @@ function addContact()
     // $description = $_POST["description"];
     $sql = "INSERT INTO reservation (`start_date`,`end_date`,`total_cost`,`created_at`) VALUES ('$checkin','$checkout','100','$checkin')";
     if (mysqli_query($conn, $sql)) {
-        header('Location: /Youbook/pages/home1.php');
+        header('Location: ../../index.php');
         echo "mamak";
     }
     else

@@ -1,5 +1,5 @@
 <?php
-include('PHP/scripts.php');
+include('pages/php/scripts.php');
     $sql = "SELECT * FROM hotel";
     $hotels = mysqli_query($conn,$sql);
 ?>
@@ -48,6 +48,7 @@ include('PHP/scripts.php');
                 <form class="d-flex">
                     <a href="signin.php" class="btn btn-outline-success  me-2" type="submit">login</a>
                     <a href="signup.php" class="btn btn-success" type="submit">Register</a>
+                    <a href="pages/reservations.php" class="btn btn-outline-success  me-2" type="submit">my reservations</a>
                 </form>
             </div>
         </div>
@@ -112,7 +113,7 @@ include('PHP/scripts.php');
                                     </div>
                                     <!-- Product actions-->
                                     <div class='card-footer p-4 pt-0 border-top-0 bg-transparent'>
-                                        <div class='text-center'><a class='btn btn-outline-dark mt-auto' href='#'>Add to cart</a></div>
+                                        <div class='text-center'><a class='btn btn-outline-dark mt-auto' href='pages/booking.php?=$row[hotel_id]'>Add to cart</a></div>
                                     </div>
                                 </div>
                             </div>
