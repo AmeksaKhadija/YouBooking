@@ -107,10 +107,9 @@
                     <p>Room Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut dui eget mauris dapibus porta.</p>
                     <ul class="list-group">
                       <li class="list-group-item"><strong>Price:</strong> $200</li>
-                      <li class="list-group-item"><strong>quantity:</strong> 300 </li>
+                      <li class="list-group-item"><strong>quantity:</strong> 50 </li>
                       <li class="list-group-item"><strong>Amenities:</strong> Free Wi-Fi, Air Conditioning, Mini Fridge</li>
                     </ul>
-                    <a href="#" class="btn btn-primary">Book Now</a>
                   </div>
                 </div>
             </div>
