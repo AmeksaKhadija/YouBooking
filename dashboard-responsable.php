@@ -36,7 +36,7 @@
                     </div>
                     <div class="d-flex border-bottom justify-content-between align-items-center px-2">
                         <i class="fa-solid fa-chart-line pb-3" style="color: #ffffff;"></i> 
-                        <a href="#" class="text-light fw-bold pb-3 mt-2 text-decoration-none">Booking Stats</a>
+                        <a href="pages/statistic.php" class="text-light fw-bold pb-3 mt-2 text-decoration-none">Booking Stats</a>
                     </div>
                     <div class="d-flex border-bottom justify-content-between align-items-center px-2">
                         <i class="fa-solid fa-chart-pie pb-3" style="color: #ffffff;"></i>
@@ -44,7 +44,7 @@
                     </div>
                     <div class="d-flex border-bottom justify-content-between align-items-center px-2">
                         <i class="fa-regular fa-comment-dots pb-3" style="color: #ffffff;"></i>
-                        <a href="pages/messageclient.php" class="text-light fw-bold pb-3 mt-2 text-decoration-none">Messages</a>
+                        <a href="#" class="text-light fw-bold pb-3 mt-2 text-decoration-none">Messages</a>
                     </div>
                     <div class="d-flex border-bottom justify-content-between align-items-center px-2">
                         <i class="fa-solid fa-gear pb-3" style="color: #ffffff;"></i>
@@ -89,6 +89,28 @@
             <div class="ourdashboard--statistics_graph w-50 me-4 text-light fw-bold mb-5">
                 <p class="ms-3 mt-3">Booking Stats</p>
                 <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+                <script>
+                const ctx = document.getElementById('myChart');
+
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                    datasets: [{
+                        label: '# of Votes',
+                        data: [12, 19, 3, 5, 2, 3],
+                        borderWidth: 1
+                    }]
+                    },
+                    options: {
+                    scales: {
+                        y: {
+                        beginAtZero: true
+                        }
+                    }
+                    }
+                });
+                </script>
             
             </div>
             <div class="ourdashboard--statistics_graph  w-50 text-light fw-bold mb-5"><p class="ms-3 mt-3">Booking traffic</p></div>
